@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets Fact</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500&family=Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="home">
+        <nav class="menu">
+            <h1>the planets</h1>
+
+            <div id="mobileButton" onclick="openMenu()" class="mobile--icon">
+                <img src="assets/icon-hamburger.svg" alt="">
+            </div>
+
+            <div class="menu--list">
+                <h4 class="menu--item">Mercury</h4>
+                <h4 class="menu--item">Venus</h4>
+                <h4 class="menu--item">Earth</h4>
+                <h4 class="menu--item">Mars</h4>
+                <h4 class="menu--item">Jupiter</h4>
+                <h4 class="menu--item">Saturn</h4>
+                <h4 class="menu--item">Uranus</h4>
+                <h4 class="menu--item">Neptune</h4>
+            </div>
+        </nav>
+
+        <div id="m-menu" class="mobile--menu">
+            <div class="m-menu--list">
+                <div onclick="changeData('Mercury')" class="m-menu--item">
+                    <div class="left">
+                        <div class="circle" style="background-color: #DEF4FC;"></div>
+                        <p>mercury</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icon-chevron.svg" alt="">
+                    </div>
+                </div>
+                <div onclick="changeData('Venus')" class="m-menu--item">
+                    <div class="left">
+                        <div class="circle" style="background-color: #F7CC7F;"></div>
+                        <p>venus</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icon-chevron.svg" alt="">
+                    </div>
+                </div>
+                <div onclick="changeData('Earth')"  class="m-menu--item">
+                    <div class="left">
+                        <div class="circle" style="background-color: #545BFE;"></div>
+                        <p>earth</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icon-chevron.svg" alt="">
+                    </div>
+                </div>
+                <div onclick="changeData('Mars')"  class="m-menu--item">
+                    <div class="left">
+                        <div class="circle" style="background-color: #FF6A45;"></div>
+                        <p>mars</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icon-chevron.svg" alt="">
+                    </div>
+                </div>
+                <div onclick="changeData('Jupiter')"  class="m-menu--item">
+                    <div class="left">
+                        <div class="circle" style="background-color: #ECAD7A;"></div>
+                        <p>jupiter</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icon-chevron.svg" alt="">
+                    </div>
+                </div>
+                <div onclick="changeData('Saturn')"  class="m-menu--item">
+                    <div class="left">
+                        <div class="circle" style="background-color: #FCCB6B;"></div>
+                        <p>saturn</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icon-chevron.svg" alt="">
+                    </div>
+                </div>
+                <div onclick="changeData('Uranus')"  class="m-menu--item">
+                    <div class="left">
+                        <div class="circle" style="background-color: #65F0D5;"></div>
+                        <p>uranus</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icon-chevron.svg" alt="">
+                    </div>
+                </div>
+                <div onclick="changeData('Neptune')"  class="m-menu--item">
+                    <div class="left">
+                        <div class="circle" style="background-color: #497EFA;"></div>
+                        <p>neptune</p>
+                    </div>
+                    <div class="icon">
+                        <img src="assets/icon-chevron.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="m-view" class="mobile--view">
+            <div onclick="changeView(1)" class="mobile--button">
+                <h3>overview</h3>
+            </div>
+            <div onclick="changeView(2)" class="mobile--button">
+                <h3>structure</h3>
+            </div>
+            <div onclick="changeView(3)" class="mobile--button">
+                <h3>surface</h3>
+            </div>
+        </div>
+
+        <div id="container" class="container">
+
+            <div class="planet">
+                <div class="planet--picture">
+                    <div id="overview" class="picture picture--entire entire">
+                        <img id="overview-img" src="assets/planet-mercury.svg" alt="">
+                    </div>
+                    <div id="internal" class="picture picture--cut cut">
+                        <img id="internal-img" src="assets/planet-mercury-internal.svg" alt="">
+                    </div>
+                    <div id="surface" class="picture picture--geo geo">
+                        <img id="surface-img" src="assets/geology-mercury.png" alt="">
+                    </div>
+                </div>
+
+                <div class="planet--info">
+                    <div class="top--section">
+                        <h1 id="p-title">MERCURY</h1>
+                        <p id="p-desc" class="p--description">Mercury is the smallest planet in the Solar System and the closest to the Sun. 
+                            Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one 
+                            of four terrestrial planets in the Solar System, and is a rocky body like Earth.
+                        </p>
+                        <div class="source">
+                            <p>Source : <a id="p-link" target="_blank" href="https://fr.wikipedia.org/wiki/Mercure_(plan%C3%A8te)">Wikipedia</a></p>
+                            <div class="source--logo">
+                                <img src="assets/icon-source.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bot--section">
+                        
+
+                        <div class="button--list">
+                            <div onclick="changeView(1)" class="button">
+                                <h3><span>01</span>overview</h3>
+                            </div>
+                            <div onclick="changeView(2)" class="button">
+                                <h3><span>02</span>internal structures</h3>
+                            </div>
+                            <div onclick="changeView(3)" class="button">
+                                <h3><span>03</span>surface geology</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="keypoint">
+                <div class="key--item">
+                    <h4>rotation time</h4>
+                    <h2 id="p-rotation">58.6 days</h2>
+                </div>
+                <div class="key--item">
+                    <h4>revolution time</h4>
+                    <h2 id="p-revolution">87.97 days</h2>
+                </div>
+                <div class="key--item">
+                    <h4>radius</h4>
+                    <h2 id="p-radius">2,439.7 km</h2>
+                </div>
+                <div class="key--item">
+                    <h4>average temp.</h4>
+                    <h2 id="p-temp">430°c</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="data.json"></script>
+    <script src="main.js"></script>
+</body>
+</html>

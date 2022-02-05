@@ -1,0 +1,480 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --white: #ffffff;
+  --dark-blue: #070724;
+  --dark-grey: #38384f;
+  --light-grey: #838391;
+  --button-active: #419ebb;
+  --light-orange: #eda249;
+  --purple: #6f2ed6;
+  --dark-orange: #d14c32;
+  --red: #d83a34;
+  --orange: #cd5120;
+  --light-green: #1ec2a4;
+  --royal-blue: #2d68f0;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  background-image: url(assets/background-stars.svg);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover/100%;
+}
+
+h1 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 103px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.6px;
+}
+
+h4 {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.menu {
+  height: 85px;
+  padding: 0px 40px 0px 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.menu h1 {
+  font-size: 28px;
+  letter-spacing: -1.05px;
+  line-height: 36px;
+  text-transform: uppercase;
+  margin-top: 22px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.menu .menu--list {
+  display: flex;
+  height: 25px;
+  margin-top: 33px;
+  opacity: 0.75;
+}
+.menu .menu--list .menu--item {
+  cursor: pointer;
+  margin-left: 33px;
+  text-transform: uppercase;
+}
+
+.mobile--icon {
+  display: none;
+}
+
+.mobile--menu {
+  display: none;
+  background-color: var(--dark-blue);
+  z-index: 1;
+}
+.mobile--menu .m-menu--list {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px;
+}
+.mobile--menu .m-menu--list :last-child {
+  border-bottom: none !important;
+}
+.mobile--menu .m-menu--list .m-menu--item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.mobile--menu .m-menu--list .m-menu--item .left {
+  display: flex;
+  flex-direction: row;
+}
+.mobile--menu .m-menu--list .m-menu--item .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+.mobile--menu .m-menu--list .m-menu--item p {
+  text-transform: uppercase;
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1.36px;
+  line-height: 25px;
+}
+
+.mobile--view {
+  position: relative;
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.mobile--view .mobile--button {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mobile--view .mobile--button :active {
+  color: var(--white);
+}
+.mobile--view .mobile--button :active::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: var(--button-active);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container .planet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container .planet .planet--info {
+  max-width: 350px;
+  padding-top: 126px;
+  padding-bottom: 87px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .planet .planet--picture {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 753px;
+}
+.container .planet .planet--picture .cut {
+  display: none;
+}
+.container .planet .planet--picture .geo {
+  position: absolute;
+  transform: translateY(86%);
+  display: none;
+  width: 163px;
+}
+.container .planet .planet--picture .geo img {
+  width: inherit;
+}
+.container .planet .p--description {
+  margin-top: 23px;
+}
+.container .planet .source {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+  align-items: center;
+}
+.container .planet .source p {
+  opacity: 0.5;
+  margin-right: 8px;
+}
+.container .planet .source p a {
+  color: white;
+  font-weight: 700;
+  text-decoration: underline !important;
+}
+.container .planet .source .source--logo {
+  display: flex;
+  align-items: center;
+}
+.container .planet .button--list {
+  margin-top: 39px;
+  width: 100%;
+}
+.container .planet .button--list .button {
+  cursor: pointer;
+  margin-bottom: 16px;
+  height: 48px;
+  padding-left: 18px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.container .planet .button--list .button h3 span {
+  margin-right: 28px;
+  opacity: 0.5;
+}
+.container .planet .button--list .button:active {
+  background-color: var(--button-active) !important;
+  border: none;
+}
+.container .planet .button--list .button:hover {
+  background-color: var(--dark-grey);
+}
+.container .planet .button--list :nth-child(3) {
+  margin-bottom: 0 !important;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 165px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.container .keypoint {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container .keypoint .key--item {
+  height: 128px;
+  width: 255px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 23px 20px 0px 20px;
+}
+.container .keypoint .key--item h4 {
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.container .keypoint .key--item h2 {
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+@media screen and (max-width: 1380px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .container .keypoint .key--item {
+    width: 215px;
+  }
+}
+@media screen and (max-width: 1070px) {
+  .container {
+    padding: 0 39px;
+    margin-bottom: 0 !important;
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 62px;
+  }
+
+  h3 {
+    font-size: 9px;
+    line-height: 25px;
+  }
+
+  p {
+    font-size: 11px;
+    line-height: 22px;
+  }
+
+  .home .menu {
+    flex-direction: column;
+    justify-content: unset;
+    height: 159px;
+    text-align: center;
+    padding: 0 51px;
+  }
+  .home .menu h1 {
+    margin-top: 32px;
+  }
+  .home .menu .menu--list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 39px;
+  }
+  .home .menu .menu--item {
+    margin-left: 0px;
+  }
+
+  .planet {
+    flex-direction: column !important;
+    justify-content: unset;
+  }
+  .planet .planet--picture {
+    height: 470px !important;
+  }
+  .planet .planet--picture .picture {
+    text-align: center;
+  }
+  .planet .planet--picture .picture img {
+    width: 63.45%;
+  }
+  .planet .planet--picture .geo {
+    width: 105px !important;
+  }
+  .planet .planet--info {
+    padding-top: 0 !important;
+    flex-direction: row !important;
+    max-width: unset !important;
+    width: 100%;
+    padding-bottom: 27px !important;
+  }
+  .planet .planet--info .top--section {
+    margin-right: 15px;
+  }
+  .planet .planet--info .p--description {
+    max-width: 339px;
+  }
+  .planet .planet--info .button {
+    width: 281px;
+    height: 40px !important;
+  }
+  .planet .planet--info .button span {
+    margin-right: 17px !important;
+  }
+
+  .keypoint .key--item {
+    width: 164px !important;
+    height: 88px !important;
+    padding: 16px 15px 0 15px !important;
+  }
+  .keypoint h4 {
+    font-size: 8px;
+    line-height: 16px;
+  }
+  .keypoint h2 {
+    font-size: 24px;
+    line-height: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .keypoint {
+    flex-direction: column !important;
+  }
+  .keypoint .key--item {
+    padding: 9px 24px 13px 24px !important;
+    margin-bottom: 16px;
+    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: unset !important;
+  }
+  .keypoint .key--item h2 {
+    margin-top: 0 !important;
+  }
+  .keypoint .key--item h4 {
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .mobile--view {
+    display: flex;
+  }
+
+  .planet--info .top--section {
+    width: 100% !important;
+    text-align: center;
+  }
+  .planet--info .top--section .p--description {
+    margin: 0 auto !important;
+    margin-top: 23px !important;
+  }
+  .planet--info .top--section .source {
+    justify-content: center;
+  }
+  .planet--info .bot--section {
+    display: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .menu {
+    height: 68px !important;
+    text-align: unset !important;
+    padding: 0 24px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .menu .mobile--icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .menu h1 {
+    margin-top: 0 !important;
+  }
+  .menu .menu--list {
+    display: none !important;
+  }
+
+  .planet .planet--picture {
+    margin-top: 15px !important;
+    height: 304px !important;
+  }
+  .planet .planet--picture .picture {
+    max-width: 80% !important;
+  }
+  .planet .planet--picture .geo {
+    transform: translateY(66%) !important;
+  }
+  .planet .source {
+    margin-top: 32px !important;
+  }
+
+  .keypoint .key--item {
+    margin-bottom: 8px !important;
+  }
+  .keypoint .key--item h2 {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
